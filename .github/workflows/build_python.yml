@@ -21,7 +21,7 @@ jobs:
         python-version: 3.6
         
     - name: change directory to backend_movies
-      run: cd backend_movies/
+      run: cd v1/backend_movies/
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -48,7 +48,7 @@ jobs:
         python-version: 3.6
         
     - name: change directory to backend_proxy
-      run: cd backend_proxy
+      run: cd v1/backend_proxy
       
     - name: Install dependencies
       run: |
