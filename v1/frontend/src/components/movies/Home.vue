@@ -8,7 +8,7 @@
     <main class="sneek-preview">
       <div class="sneek-preview__container">
         <h3>Coming soon:</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Vm4tx1O9GAc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Y6ljFaKRTrI?start=6" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </main>
   </div>

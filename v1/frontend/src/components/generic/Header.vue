@@ -1,7 +1,7 @@
 <template>
-  <header class="header">
+  <header class="header" placeholder="placeholder_header" fullwidth id="id_header">
     <div class="header__logo">
-      <img @click="navigateToHome" src="../../assets/imtdb.svg" alt="" class="logo">
+      <img @click="navigateToHome" src="../../assets/imtdb.svg" alt="1" id="logo" class="logo">
     </div>
     <div class="header__title">
       <h2>
@@ -12,22 +12,22 @@
       <li
         class="header-menu__item"
         v-if="!loggedIn">
-        <router-link tag="a" :to="{name: 'signUp'}">Sign Up</router-link>
+        <router-link tag="a" id="header_signUp" :to="{name: 'signUp'}">Sign Up</router-link>
       </li>
       <li
         class="header-menu__item"
         v-if="!loggedIn">
-        <router-link tag="a" :to="{name: 'login'}">Login</router-link>
+        <router-link tag="a" id="header_login" :to="{name: 'login'}">Login</router-link>
       </li>
       <li
         class="header-menu__item"
         v-if="loggedIn">
-        <router-link tag="a" :to="{name: 'profile'}">Profile</router-link>
+        <router-link tag="a" id="header_loggedInProfile" :to="{name: 'profile'}">Profile</router-link>
       </li>
       <li
         class="header-menu__item"
         v-if="loggedIn">
-        <router-link tag="a" :to="{name: 'logout'}">Logout</router-link>
+        <router-link tag="a" id="header_loggedInLogout" :to="{name: 'logout'}">Logout</router-link>
       </li>
     </ul>
   </header>

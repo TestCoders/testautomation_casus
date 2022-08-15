@@ -17,8 +17,8 @@
       </div>
     </div>
     <div class="movie__details">
-      <h3>{{movie.title}}</h3>
-      <p>{{movie.description}}</p>
+      <h3 id='movie__title'>{{movie.title}}</h3>
+      <p id="movie__description">{{movie.description}}</p>
       <router-link
         tag="button"
         :to="{ name: 'movie', params: { imdbId: movie.imdb }}"
