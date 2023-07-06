@@ -1,0 +1,81 @@
+version: "3"
+services:
+
+  moviemongo:
+    container_name: moviemongo
+    image: mongo:3.6
+    ports:
+       - 27017:27017
+
+  moviegres:
+     container_name: moviegres
+     build: ./data_seeder/db
+     image: testcoders/testautomation_workshop_moviegres:v1
+     ports:
+       - 5432:5432
+     environment:
+       - POSTGRES_PASSWORD=test
+       - POSTGRES_USER=postgres
+
+  users:
+    image: testcoders/testautomation_workshop_users:v1
+    build: ./v1/backend_users/backend_users
+    platform: linux/arm64/v8
+    ports:
+      - 4242:4242
+    depends_on:
+      - moviegres
+    links:
+      - moviegres
+    environment:
+      - ASPNETCORE_ENVIRONMENT="Development"
+
+  movies:
+    image: testcoders/testautomation_workshop_movies:v1
+    build: ./v1/backend_movies
+    platform: linux/arm64/v8
+    ports:
+       - 4243:4243  # expose ports - HOST:CONTAINER
+    depends_on:
+       - moviemongo
+    links:
+       - moviemongo
+    environment:
+       - APP_SETTINGS=production
+       - MONGO_URL=mongodb://moviemongo:27017
+
+  proxy:
+    image: testcoders/testautomation_workshop_proxy:v1
+    build: ./v1/backend_proxy
+    ports:
+      - 8080:8080
+    depends_on:
+       - movies
+       - users
+    links:
+       - movies
+       - users
+    environment:
+       - APP_SETTINGS=Production
+
+  dataseeder:
+    build: ./data_seeder
+    image: testcoders/testautomation_workshop_dataseeder:v1
+    depends_on:
+       - moviemongo
+       - moviegres
+       - users
+    links:
+       - moviemongo
+       - moviegres
+       - users
+
+  frontend:
+    image: testcoders/testautomation_workshop_frontend:v1
+    build: v1/frontend
+    ports:
+    - 80:80
+    depends_on:
+    - proxy
+    links:
+    - proxy
