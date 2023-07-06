@@ -16,5 +16,5 @@ jobs:
         run: docker compose build
 
       - name: Run docker-compose build (old stuff)
-        run: docker-compose build
+        run: docker-compose build --no-cache
 
