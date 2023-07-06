@@ -3,6 +3,7 @@ name: Run docker-compose build
 on:
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build:
