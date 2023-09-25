@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM python:3.11-alpine
 
 # set working directory
 RUN mkdir -p /usr/src/app
