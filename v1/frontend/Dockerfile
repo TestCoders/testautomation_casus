@@ -3,7 +3,16 @@
 FROM node:14.15.3-alpine as build-stage
 WORKDIR /app
 COPY . .
-RUN npm install
+
+# Install Python
+ENV PYTHONBUFFERED=1
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+# Install make
+RUN apk add --update --no-cache make
+# Install g++
+RUN apk add --update --no-cache g++
+
+RUN npm ci
 RUN npm run build
 
 # production stage
