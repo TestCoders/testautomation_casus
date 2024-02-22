@@ -6,7 +6,7 @@ Feature: movie proxy
       | 1  | admin    | testadmin |
     Then i create the following movie
       | imdb | title                             | type  | year |
-      | test | De wilde avonturen van Testcoders | movie | 2024 |
+      | tt12 | De wilde avonturen van Testcoders | movie | 2024 |
     Then the server has returned status code 201
 
   Scenario: 2. Searching for a set of movies
