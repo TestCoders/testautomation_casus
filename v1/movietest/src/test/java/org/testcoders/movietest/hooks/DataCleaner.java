@@ -16,6 +16,9 @@ public class DataCleaner {
 
   @Before
   public void cleanUserData() {
+    while (userRepository.findAll().size() != 2) {
+      Thread.sleep(1000); // Wait for 1 second before checking again
+    }
     // Find the default Admin and User and keep them
     User admin = userRepository.findById(1).orElseThrow();
     User user = userRepository.findById(2).orElseThrow();
