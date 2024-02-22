@@ -1,0 +1,24 @@
+proxy:
+  host: proxy
+  port: 8080
+
+movie:
+  host: users
+  port: 4243
+
+user:
+  host: movies
+  port: 4242
+
+spring:
+  datasource:
+    url: jdbc:postgresql://moviegres:5432/testautomation
+    username: postgres
+    password: test
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    mongodb:
+      host: moviemongo
+      port: 27017
+      database: video

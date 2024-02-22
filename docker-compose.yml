@@ -77,3 +77,13 @@ services:
     - proxy
     links:
     - proxy
+
+  movietest:
+    image: testcoders/testautomation_workshop_movietest:v1
+    build: v1/movietest
+    depends_on:
+      - dataseeder
+    volumes:
+      - ./v1/movietest:/app
+    environment:
+      - SPRING_PROFILES_ACTIVE=production

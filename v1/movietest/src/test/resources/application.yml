@@ -1,0 +1,24 @@
+proxy:
+  host: localhost
+  port: 8080
+
+movie:
+  host: localhost
+  port: 4243
+
+user:
+  host: localhost
+  port: 4242
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testautomation
+    username: postgres
+    password: test
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: video
