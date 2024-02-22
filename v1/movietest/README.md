@@ -37,4 +37,3 @@ Movietest has support for directly interacting with both the mongodb and the pos
 1. Implementing Playwright for testing the frontend
 2. Implementing Wiremock. Useful for mocking the proxy and testing the frontend independently of the backend.
 3. Better dataseeding and control over dataseeding and Test Data Management. For PoC purposes there is a Dataseeder with Faker for movies. 
-4. Implementing the CI/CD pipeline. Shouldn't be too hard since Movietest is already in a Docker Container.
