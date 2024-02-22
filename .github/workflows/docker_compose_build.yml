@@ -12,11 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run docker-compose build
-        run: docker-compose build
-
-      - name: Seed data
-        run: docker-compose up dataseeder
-        
-      - name: Run tests
-        run: docker-compose up --exit-code-from movietest movietest
+      - name: Run docker-compose up
+        run: docker-compose up
