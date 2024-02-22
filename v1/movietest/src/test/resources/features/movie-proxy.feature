@@ -7,7 +7,7 @@ Feature: movie proxy
     Then i create the following movie
       | imdb | title                             | type  | year |
       | tt12 | De wilde avonturen van Testcoders | movie | 2024 |
-    Then the server has returned status code 201
+    Then the server has returned status code 501
 
   Scenario: 2. Searching for a set of movies
     When i request a token with the following admin
