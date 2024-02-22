@@ -29,6 +29,9 @@ public class DataCleaner {
 
   @Before
   public void cleanMovieData() {
+     while (movieRepository.findAll().size() != 34) {
+      Thread.sleep(1000); // Wait for 1 second before checking again
+    }
     List<Movie> movie = movieRepository.findAll();
     // Get all movies in the MongoDB and keep the first 34 movies that were seeded by Dataseeder.
     List<Movie> movieCleaned = movie
