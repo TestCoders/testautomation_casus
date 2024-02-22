@@ -83,6 +83,7 @@ services:
     build: v1/movietest
     depends_on:
       - dataseeder
+      - proxy
     volumes:
       - ./v1/movietest:/app
     environment:
