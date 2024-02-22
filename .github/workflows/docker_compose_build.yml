@@ -12,5 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run docker-compose build
-        run: docker-compose build
+      - name: Run docker-compose up for proxy and dataseeder
+        run: docker-compose up proxy dataseeder
+
+      - name: Run docker-compose up for movietest
+        run: docker-compose up movietest
